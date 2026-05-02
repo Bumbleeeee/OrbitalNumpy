@@ -3,15 +3,17 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from planet import Planet
 from initial_conditions import *
-# TODO: helper function for leapfrog accel calc, maybe make plot nicer, put plot setup in a function
+# TODO: helper function for leapfrog accel calc
 
 dt = 0.01
 
 fig, ax, earth, sat, moon = earth_center()
 
-ax.view_init(elev=30, azim=45)
-#TODO: might look better as a wire box with no grid lines
+ax.view_init(elev=60, azim=45)
 ax.grid(False) # etc
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_zticks([])
 
 sat_plot = ax.plot([sat.pos[0]], [sat.pos[1]], [sat.pos[2]], 'ro', markersize=5)[0]
 moon_plot = ax.plot([moon.pos[0]], [moon.pos[1]], [moon.pos[2]], 'go', markersize=5)[0]

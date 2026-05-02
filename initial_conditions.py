@@ -1,14 +1,6 @@
 from planet import Planet
-import matplotlib.pyplot as plt
+from graph import create_fig
 
-def create_fig(xlims: tuple, ylims: tuple, zlims: tuple):
-    fig = plt.figure()
-    ax = fig.add_subplot(projection="3d")
-    ax.set(xlim3d=xlims, xlabel='X')
-    ax.set(ylim3d=ylims, ylabel='Y')
-    ax.set(zlim3d=zlims, zlabel='Z')
-
-    return fig, ax
 
 def figure_eight():
     earth = Planet(pos=(-0.97, 0.24, 0), velo=(0.465, 0.43, 0), mass=1)
